@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="struts-default">
+
+	<action name="user_regJsp" class="org.action.DLAction" method="user_regJsp">
+		<result name="success">/success.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	<action name="user_loginJsp" class="org.action.DLAction" method="user_loginJsp">
+		<result name="success">/success.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	
+	<action name="File_up" class="org.action.FileAction" method="File_up">
+		<result name="success">/success.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	
+	</package>
+</struts>    
