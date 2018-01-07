@@ -4,15 +4,25 @@
 <package name="default" extends="struts-default">
 
 	<action name="user_regJsp" class="org.action.DLAction" method="user_regJsp">
-		<result name="success">/success.jsp</result>
-		<result name="error">/fail.jsp</result>
+		<result name="success">/user_loginJsp.jsp</result>
+		<result name="error">/user_register.jsp</result>
 	</action>
 	<action name="user_loginJsp" class="org.action.DLAction" method="user_loginJsp">
+		<result name="success">/mainYJY.jsp</result>
+		<result name="error">/user_loginJsp.jsp</result>
+	</action>
+	
+	<action name="File_up" class="org.action.FileAction" method="File_up">
 		<result name="success">/success.jsp</result>
 		<result name="error">/fail.jsp</result>
 	</action>
 	
-	<action name="File_up" class="org.action.FileAction" method="File_up">
+	<action name="File_list" class="org.action.FileAction" method="File_list">
+		<result name="success">/File_list.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	
+	<action name="File_down" class="org.action.FileAction" method="File_down">
 		<result name="success">/success.jsp</result>
 		<result name="error">/fail.jsp</result>
 	</action>

@@ -29,7 +29,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div>
 	登录名字：<input type="text" name="user_loginJsp.loginName"><br>
 	登录密码：<input type="text" name="user_loginJsp.userPwd"><br>
-	<input type="submit" value="注册"/>	
+	<input type="submit" value="登录"/>	
+	<a href="user_register.jsp">注册</a>
 	</div>
 	</div>
 	</s:form>

@@ -33,4 +33,7 @@
 	<bean id="UserDaoImp" class="org.dao.imp.UserDaoImp">
 		<property name="sessionFactory" ref="mysessionFactory"></property>
 	</bean>
+	<bean id="FileDaoImp" class="org.dao.imp.FileDaoImp">
+		<property name="sessionFactory" ref="mysessionFactory"></property>
+	</bean>
 </beans>

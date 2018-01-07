@@ -1,9 +1,13 @@
 package org.action;
 
+import java.util.Map;
+
 import org.dao.UserDao;
 import org.model.Userinfo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import com.opensymphony.xwork2.ActionContext;
 
 public class DLAction {
 	ApplicationContext context=new FileSystemXmlApplicationContext("C:/Users/lenovo/myeclipseworkspace/SofeWareFile/src/applicationContext.xml");
@@ -34,11 +38,15 @@ public class DLAction {
 		Userinfo user=userDao.findUserByNaPw(name, pwd);
 		if(user!=null){
 			System.out .print("Find"+user.toString());
+			Map session=ActionContext.getContext().getSession();
+			session.put("LoginUser",user );
 			return "success";
 		}else{
 			return "error";
 		}		
-	}	
+	}
+	
+	
 	
 	//×¢²áÓÃ»§
 	public String user_regJsp(){	

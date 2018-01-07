@@ -25,10 +25,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     文件上传
 	<form method="post" enctype="multipart/form-data" action="File_up.action">
-		文件1：<input type="file" name="File_upJsp1"  /> <br> <br /> 
-		填写文件名字<input type="text" name="File_upJsp1Name" /> <br> <br /> 
-		填写文件类型<input type="text" name="File_upJsp1Type" /> <br> <br /> 
-		文件介绍：<input type="text" name="description" /> <br> <br /> 
+		文件选择：<input type="file" name="File_upJsp1"  /> <br> <br /> 
+		文件名字<input type="text" name="File_upJsp1Name" /> <br> <br /> 
+		文件类型<input type="text" name="File_upJsp1Type" /> <br> <br /> 
+		文件介绍：<input type="text" name="File_upJsp1Des" /> <br> <br /> 
+		文件标签<input type="text" name="File_upJsp1Tit">
 		<input type="submit" value="提交" />
 	</form>
   </body>

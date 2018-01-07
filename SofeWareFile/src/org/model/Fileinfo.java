@@ -1,7 +1,5 @@
 package org.model;
 
-import java.sql.Timestamp;
-
 /**
  * Fileinfo entity. @author MyEclipse Persistence Tools
  */
@@ -17,8 +15,6 @@ public class Fileinfo implements java.io.Serializable {
 	private String type;
 	private String description;
 	private Integer createUser;
-	private Timestamp createDate;
-	private Timestamp updateDate;
 	private Integer hitCount;
 
 	// Constructors
@@ -36,15 +32,13 @@ public class Fileinfo implements java.io.Serializable {
 	/** full constructor */
 	public Fileinfo(String fileName, String filePath, String title,
 			String type, String description, Integer createUser,
-			Timestamp createDate, Timestamp updateDate, Integer hitCount) {
+			Integer hitCount) {
 		this.fileName = fileName;
 		this.filePath = filePath;
 		this.title = title;
 		this.type = type;
 		this.description = description;
 		this.createUser = createUser;
-		this.createDate = createDate;
-		this.updateDate = updateDate;
 		this.hitCount = hitCount;
 	}
 
@@ -104,22 +98,6 @@ public class Fileinfo implements java.io.Serializable {
 
 	public void setCreateUser(Integer createUser) {
 		this.createUser = createUser;
-	}
-
-	public Timestamp getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(Timestamp createDate) {
-		this.createDate = createDate;
-	}
-
-	public Timestamp getUpdateDate() {
-		return this.updateDate;
-	}
-
-	public void setUpdateDate(Timestamp updateDate) {
-		this.updateDate = updateDate;
 	}
 
 	public Integer getHitCount() {

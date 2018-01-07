@@ -28,12 +28,6 @@
         <property name="createUser" type="java.lang.Integer">
             <column name="CreateUser" />
         </property>
-        <property name="createDate" type="java.sql.Timestamp">
-            <column name="CreateDate" length="19" />
-        </property>
-        <property name="updateDate" type="java.sql.Timestamp">
-            <column name="UpdateDate" length="19" />
-        </property>
         <property name="hitCount" type="java.lang.Integer">
             <column name="hitCount" />
         </property>
