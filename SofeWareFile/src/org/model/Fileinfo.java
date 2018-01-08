@@ -8,6 +8,14 @@ public class Fileinfo implements java.io.Serializable {
 
 	// Fields
 
+	@Override
+	public String toString() {
+		return "Fileinfo [id=" + id + ", fileName=" + fileName + ", filePath="
+				+ filePath + ", title=" + title + ", type=" + type
+				+ ", description=" + description + ", createUser=" + createUser
+				+ ", hitCount=" + hitCount + "]";
+	}
+
 	private Integer id;
 	private String fileName;
 	private String filePath;

@@ -21,4 +21,12 @@ public class FileDaoImp extends HibernateDaoSupport implements FileDao {
 		return list;
 	}
 
+	public Fileinfo findfileInfoByID(int fileId) {
+		List list=getHibernateTemplate().find("from Fileinfo where id=?",fileId);	
+		if(list.size()>0){
+			return (Fileinfo) list.get(0);
+		}
+		return null;
+	}
+
 }
