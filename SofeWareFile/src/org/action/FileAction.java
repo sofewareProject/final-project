@@ -36,6 +36,14 @@ public class FileAction extends ActionSupport {
 	String downPath = ServletActionContext.getServletContext().getRealPath(
 			"/WEB-INF/download");
 
+	public String getFile_searchJspTitle() {
+		return File_searchJspTitle;
+	}
+
+	public void setFile_searchJspTitle(String file_searchJspTitle) {
+		File_searchJspTitle = file_searchJspTitle;
+	}
+
 	private Userinfo login_userJsp;
 	ApplicationContext context = new FileSystemXmlApplicationContext(
 			"C:/Users/lenovo/myeclipseworkspace/SofeWareFile/src/applicationContext.xml");
@@ -45,14 +53,11 @@ public class FileAction extends ActionSupport {
 	List AllfilesJsp;
 	public int fileId;
 	public File file_downJsp;
+	public String File_searchJspName,File_searchJspTitle;
+	
+	public List file_searchJsp;//name
 
-	public int getFileId() {
-		return fileId;
-	}
 
-	public void setFileId(int fileId) {
-		this.fileId = fileId;
-	}
 
 	// 文件上传
 	public String File_up() {
@@ -137,6 +142,35 @@ public class FileAction extends ActionSupport {
 		return null;
 		
 	}
+	
+	
+	//文件按名模糊搜索
+	public String File_search(){
+		System.out.println("File_searchJspName=" + File_searchJspName);
+		file_searchJsp=fileDao.findfileInfoByName(File_searchJspName);
+		System.out .println("file_searchJsp.size()="+file_searchJsp.size());
+		
+		//按名字查不用后缀
+		if(file_searchJsp!=null){
+			return "success";
+		}else{
+			return "error";
+		}		
+	}
+	
+	
+	//文件按标签模糊搜索
+	public String File_searchTitle(){
+		System.out.println("File_searchJspTitle=" + File_searchJspTitle);
+		file_searchJsp=fileDao.findfileInfoByTitle(File_searchJspTitle);
+		
+		//按标签查
+		if(file_searchJsp!=null){
+			return "success";
+		}else{
+			return "error";
+		}		
+	}
 
 	private void toClient(String message) {
 		// TODO Auto-generated method stub
@@ -217,5 +251,29 @@ public class FileAction extends ActionSupport {
 	public void setLogin_userJsp(Userinfo login_userJsp) {
 		this.login_userJsp = login_userJsp;
 	}
+	
+	public String getFile_searchJspName() {
+		return File_searchJspName;
+	}
+
+	public void setFile_searchJspName(String file_searchJspName) {
+		File_searchJspName = file_searchJspName;
+	}
+
+	public int getFileId() {
+		return fileId;
+	}
+
+	public void setFileId(int fileId) {
+		this.fileId = fileId;
+	}
+	public List getFile_searchJsp() {
+		return file_searchJsp;
+	}
+
+	public void setFile_searchJsp(List file_searchJsp) {
+		this.file_searchJsp = file_searchJsp;
+	}
+
 
 }

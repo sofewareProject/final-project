@@ -9,5 +9,7 @@ public interface FileDao {
 	public void deleteFile(Fileinfo fileInfo);
 	public List findAllFile();
 	public Fileinfo findfileInfoByID(int fileId);
+	public List findfileInfoByName(String fileName);
+	public List findfileInfoByTitle(String file_searchJspTitle);
 
 }

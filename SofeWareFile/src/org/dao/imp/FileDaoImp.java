@@ -29,4 +29,20 @@ public class FileDaoImp extends HibernateDaoSupport implements FileDao {
 		return null;
 	}
 
+	public List findfileInfoByName(String fileName) {
+		List list=getHibernateTemplate().find("from Fileinfo where fileName LIKE ?","%"+fileName+"%");	
+		if(list.size()>0){
+			return list;
+		}
+		return null;
+	}
+
+	public List findfileInfoByTitle(String file_searchJspTitle) {
+		List list=getHibernateTemplate().find("from Fileinfo where title=?",file_searchJspTitle);	
+		if(list.size()>0){
+			return list;
+		}
+		return null;
+	}
+
 }

@@ -27,5 +27,15 @@
 		<result name="error">/fail.jsp</result>
 	</action>
 	
+	<action name="File_search" class="org.action.FileAction" method="File_search">
+		<result name="success">/file_searchForName.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	
+	<action name="File_searchTitle" class="org.action.FileAction" method="File_searchTitle">
+		<result name="success">/file_searchForTitle.jsp</result>
+		<result name="error">/fail.jsp</result>
+	</action>
+	
 	</package>
 </struts>    
