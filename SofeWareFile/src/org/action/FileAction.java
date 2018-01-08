@@ -119,17 +119,23 @@ public class FileAction extends ActionSupport {
 		try {
 			String fileNameTemp = URLEncoder.encode(fileDown.getFileName(), "utf-8");
 			System.out .println("fileNameTemp="+fileNameTemp);
-
+						
+			if (file_downJsp.exists()) {
+				//添加下载文件
+				toShowDown(fileNameTemp);				
+				return "success";
+			} else {
+				toClient("该文档不存在！");
+				return null;
+			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
-		if (file_downJsp.exists()) {
-			return "success";
-		} else {
-			toClient("该文档不存在！");
-			return null;
-		}
+		return null;
+		
 	}
 
 	private void toClient(String message) {
@@ -148,6 +154,12 @@ public class FileAction extends ActionSupport {
 			e.printStackTrace();
 		}
 
+	}
+	
+	
+	private void toShowDown(String fileNameTemp) throws IOException{
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.setHeader("content-disposition", "attachment;filename="+fileNameTemp);
 	}
 
 	public List getAllfilesJsp() {
